@@ -4,5 +4,19 @@
 
 https://medium.com/@george.seif94/solving-sudoku-using-a-simple-search-algorithm-3ac44857fee8 -lnk Algo [algo for sudoku solver](https://medium.com/@george.seif94/solving-sudoku-using-a-simple-search-algorithm-3ac44857fee8)
 
-Format: ![Sudoku puzzle](1_j4YPhOorjY2_bzcmEZWl3A.png)
-Format: ![Alt text](url)
+![200x160](https://miro.medium.com/max/260/1*j4YPhOorjY2_bzcmEZWl3A.gif)
+ 
+
+# rules
+
+# controls
+  - 'w'
+  - 's'
+  - 'd'
+  - 'a'
+  
+# Screensorts
+
+# Dopwnload link(for 32Bit or 64Bit)
+  - choose the medium of download(user recommended download.zip)
+  - 
