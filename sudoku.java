@@ -53,7 +53,7 @@ import java.util.Scanner;
             }
         }
         int count=0,m=0;
-        while(oount<=37)
+        while(count<=37)
         {
           int i = (int)(Math.random ()*(8)+1);
           int j = (int)(Math.random ()*(8)+1);
