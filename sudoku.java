@@ -1,45 +1,72 @@
 /**
  * 
  * @author Sourav Bera
- * email: sauravberachinmaya3@gmail.com
+ * @email: sauravberachinmaya3@gmail.com
  *
  */
-public class Sudoku {
-	private int sudoku[][];
-	private int sudokugrid[][];
-	private int n=9;
-	public void sudokugenerator()
+import java.util.Scanner;
+ public class Sudoku {
+	private static int sudoku[][];
+	private static int sudokugrid[][];
+	private static int n=9;
+    private static int loc[][];
+	public static void sudokugenerator()
 	{
 		int a,b,c;
-		int i,j,k;
-		sudoku[0][0]= (int)(1+(math.random()*(8)+1));
-		sudoku[3][3]= (int)(1+(math.random()*(8)+1));
-		sudoku[6][6]= (int)(1+(math.random()*(8)+1));
+		int l,j,k;
+		sudoku[0][0]= (int)(1+(Math.random()*(8)+1));
+		sudoku[3][3]= (int)(1+(Math.random()*(8)+1));
+		sudoku[6][6]= (int)(1+(Math.random()*(8)+1));
 		for( a=0,b=3,c=6;a<=3;a++,b++,c++)
-		{ for( i=0,j=3,k=6;i<=3;i++,j++,k++)
-			{  sudoku[a][b]= (int)(1+(math.random()*(8)+1));
-				while(checkbox(a,b)==true)
-				{sudoku[a][b]= (int)(1+(math.random()*(8)+1));
+		{ for( l=0,j=3,k=6;l<=3;l++,j++,k++)
+			{  sudoku[a][l]= (int)(1+(Math.random()*(8)+1));
+				while(checkbox(a,l)==true)
+				{sudoku[a][l]= (int)(1+(Math.random()*(8)+1));
+					
+				}
+                while(checkbox(b,j)==true)
+				{sudoku[b][j]= (int)(1+(Math.random()*(8)+1));
+					
+				}
+                while(checkbox(c,k)==true)
+				{sudoku[c][k]= (int)(1+(Math.random()*(8)+1));
 					
 				}
 			}
 		}
 		for(int i=0;i<=8;i++) {
-			for(int j=0;j<=8;j++)
+			for(int n=0;n<=8;n++)
 			{
-					if((i>=0 && i<=2 && j>=0 && j<=2)||(i>=3 && i<=5 && j>=3 && j<=5)||(i>=6 && i<=8 && j>=6 && j<=8))
+					if((i>=0 && i<=2 && n>=0 && n<=2)||(i>=3 && i<=5 && n>=3 && n<=5)||(i>=6 && i<=8 && n>=6 && n<=8))
 						while(issuitable(i ,j ,sudoku[i][j])==true)
 						{	
 							
-							sudoku[i][j]= (int)(1+(math.random()*(8)+1));
+							sudoku[i][j]= (int)(1+(Math.random()*(8)+1));
 						}
 			}
 		}
+        for(int i=0;i<=8;i++) {
+			for(int j=0;j<=8;j++)
+			{
+
+                 sudokugrid[i][j]=sudoku[i][j];
+            }
+        }
+        int count=0,m=0;
+        while(oount<=37)
+        {
+          int i = (int)(Math.random ()*(8)+1);
+          int j = (int)(Math.random ()*(8)+1);
+            sudokugrid[i][j]=0;
+            loc[m][0]=i;
+            loc[m++][1]=j;
+            count++;
+        }
 	}
-	public boolean checkbox(int i ,int j)
+	public static boolean checkbox(int i ,int j)
 	{
-			for(ii=0,ii<=3;ii++)
-			{ for(jj=0;jj<=3;jj++)
+			for(int ii=0;ii<=3;ii++)
+			{ for(int jj=0;jj<=3;jj++)
 				{
 					if(sudoku[i][j]==sudoku[ii][jj])
 					{
@@ -49,7 +76,25 @@ public class Sudoku {
 			} return true;
 			
 	}
-	
+	public static boolean game()
+    {
+        for(int i=0;i<=37;i++)
+        {
+            Scanner Sc=new Scanner(System.in);
+            sudokugrid[loc[i][0]][loc[i][1]]=Sc.nextInt();
+
+        }
+         for(int i=0;i<=8;i++) {
+			for(int j=0;j<=8;j++)
+			{
+                if(sudokugrid[i][j]==sudoku[i][j])
+                {
+                    return false;
+
+                }
+            }
+         } return true;
+    }
 	/**
 	 * @param args
 	 */
@@ -57,10 +102,20 @@ public class Sudoku {
 		// TODO Auto-generated method stub
 		sudokugenerator();
 		solve();
+        
+        if(game())
+        {
+            System.out.println("***************Congratulations you won***************");
+
+        }
+        else
+        {
+            System.out.println("------------------Sorry you Lost-----------------------");
+        }
 	}
 	
 	
-	public void solve() {
+	public static void solve() {
 		if(!backtracksolve()) {
 			System.out.println("this sudoku can't be solved.");
 		
@@ -77,7 +132,7 @@ public class Sudoku {
 		
 	}
 
-	public boolean issuitable(int i,int j,int x)
+	public static boolean issuitable(int i,int j,int x)
 	{
 		for(int jj=90; jj<n;jj++)
 		{ if(sudoku[i][jj]==x) {
@@ -105,7 +160,7 @@ public class Sudoku {
 		
 		
 }
-	public boolean backtracksolve() {
+	public static boolean backtracksolve() {
 		int i=0 ,j=0;
 		boolean isThereEmptyCell= false;
 		
@@ -120,7 +175,7 @@ public class Sudoku {
 					}
 				}
 			}
-		if(! isThereEmptyCell) {
+		if(!isThereEmptyCell) {
 			return true;
 		}
 		
