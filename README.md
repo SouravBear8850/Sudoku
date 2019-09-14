@@ -11,12 +11,16 @@ https://medium.com/@george.seif94/solving-sudoku-using-a-simple-search-algorithm
  
 
 # rules
-
+ -![](https://i.stack.imgur.com/VmCsi.png)
+ -![](https://i.stack.imgur.com/HX8jY.png)
+ -![](https://i.stack.imgur.com/iLQjS.png)
+ -![](https://i.stack.imgur.com/CYOXF.png)
 # controls
   -'w'
   -'s'
   -'d'
   -'a'
+  -**Press the Entered Number in Order**
   
 # Screensorts
 
