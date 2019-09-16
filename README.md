@@ -11,19 +11,22 @@ https://medium.com/@george.seif94/solving-sudoku-using-a-simple-search-algorithm
  
 
 # rules
- -![](https://i.stack.imgur.com/VmCsi.png)
- -![](https://i.stack.imgur.com/HX8jY.png)
- -![](https://i.stack.imgur.com/iLQjS.png)
- -![](https://i.stack.imgur.com/CYOXF.png)
+ - [x] in the 9x9 grid enter vales between 1 to 9 only
+ -  [x] make sure no 3x3 subgrid have anuy numbert repeated between 1to 9
+  -  [x] make sure no element in the row has any number repeated between 1to 9
+   - [x]  make sure no element in the column has any number repeated between 1to 9
+ 
+
 # controls
-  -'w'
-  -'s'
-  -'d'
-  -'a'
-  -**Press the Entered Number in Order**
+  -  [x] **Enter number from 1-9 only** *1 and 9 inclusive*
+  - [x]  **click on the number to be inputed **
+  - [x]  **enter the digits in order of their blank spaces **
+  - [x]  **press enter to proceed and check**
+  
   
 # Screensorts
-
+  -![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgaba5d97JAAFR49X6a2tHOZ5MiqvJc7onDdnBWgFNUc7ER0K7vN47yKS7)
+  -![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxUSfLBU4tgQ0XV4nI9EPuvQSGjYKUpxmk9lHXybKcpGWCvYYK)
 # Dopwnload link(for 32Bit or 64Bit)
-  - choose the medium of download(user recommended download.zip)
-  - 
+  - [x]  choose the medium of download(user recommended download.zip)
+  
