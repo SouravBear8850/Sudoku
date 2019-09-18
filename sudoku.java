@@ -10,7 +10,7 @@ import java.util.Scanner;
 	private static int sudokugrid[][];
 	private static int n=9;
     private static int loc[][];
-	public static void sudokugenerator()
+	public static boolean sudokugenerator()
 	{
 		int a,b,c;
 		int l,j,k;
@@ -32,36 +32,39 @@ import java.util.Scanner;
 				{sudoku[c][k]= (int)(1+(Math.random()*(8)+1));
 					
 				}
+			
 			}
+	
 		}
 		for(int i=0;i<=8;i++) {
 			for(int n=0;n<=8;n++)
 			{
 					if((i>=0 && i<=2 && n>=0 && n<=2)||(i>=3 && i<=5 && n>=3 && n<=5)||(i>=6 && i<=8 && n>=6 && n<=8))
-						while(issuitable(i ,j ,sudoku[i][j])==true)
+						while(issuitable(i ,n ,sudoku[i][n])==true)
 						{	
 							
-							sudoku[i][j]= (int)(1+(Math.random()*(8)+1));
+							sudoku[i][n]= (int)(1+(Math.random()*(8)+1));
 						}
 			}
 		}
         for(int i=0;i<=8;i++) {
-			for(int j=0;j<=8;j++)
+			for(int q=0;q<=8;q++)
 			{
 
-                 sudokugrid[i][j]=sudoku[i][j];
+                 sudokugrid[i][q]=sudoku[i][q];
             }
         }
         int count=0,m=0;
         while(count<=37)
         {
           int i = (int)(Math.random ()*(8)+1);
-          int j = (int)(Math.random ()*(8)+1);
-            sudokugrid[i][j]=0;
+          int r = (int)(Math.random ()*(8)+1);
+            sudokugrid[i][r]=0;
             loc[m][0]=i;
-            loc[m++][1]=j;
+            loc[m++][1]=r;
             count++;
         }
+       return true;
 	}
 	public static boolean checkbox(int i ,int j)
 	{
@@ -99,8 +102,8 @@ import java.util.Scanner;
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		sudokugenerator();
+		// T}>OD()O Auto-generated method stub
+		if(sudokugenerator())
 		solve();
         
         if(game())
@@ -194,3 +197,5 @@ import java.util.Scanner;
 		 return false;
 	}
 	}
+
+ 
